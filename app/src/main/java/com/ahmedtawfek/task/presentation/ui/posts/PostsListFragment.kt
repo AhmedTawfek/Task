@@ -75,7 +75,10 @@ class PostsListFragment : Fragment() {
             }
 
             lifecycleScope.launch(Dispatchers.IO) {
-                postsViewModel.getPostsList()
+                if (!postsViewModel.postsRetrieved) {
+                    postsViewModel.getPostsList()
+                    postsViewModel.postsRetrieved = true
+                }
             }
 
             buttonRefresh.setOnClickListener {

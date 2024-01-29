@@ -24,6 +24,7 @@ class PostsViewModel @Inject constructor(private val postsUseCases: PostsUseCase
     val postsStateFlow = _postsStateFlow.asStateFlow()
 
     var currentPostId = -1
+    var postsRetrieved = false
 
     fun getPostsList(){
         viewModelScope.launch {
