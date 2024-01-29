@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/postsListFragment">
+
+    <fragment
+        android:id="@+id/postsListFragment"
+        android:name="com.ahmedtawfek.task.presentation.ui.posts.PostsListFragment"
+        android:label="fragment_posts_list"
+        tools:layout="@layout/fragment_posts_list" >
+        <action
+            android:id="@+id/action_postsListFragment_to_postsDetailsFragment"
+            app:destination="@id/postsDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/postsDetailsFragment"
+        android:name="com.ahmedtawfek.task.presentation.ui.posts.PostsDetailsFragment"
+        android:label="fragment_posts_details"
+        tools:layout="@layout/fragment_posts_details" >
+        <action
+            android:id="@+id/action_postsDetailsFragment_to_postsListFragment"
+            app:destination="@id/postsListFragment"
+            app:popUpTo="@id/postsDetailsFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
