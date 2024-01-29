@@ -31,7 +31,6 @@ class PostsViewModel @Inject constructor(private val postsUseCases: PostsUseCase
             try {
                 _postsListStateFlow.value = Result.Success(postsUseCases.getPostsListUseCase())
             }catch (e:Exception){
-                Log.d("Api","Error happened =${e.message}")
                 _postsListStateFlow.value = Result.Error(e)
             }
         }
@@ -43,7 +42,6 @@ class PostsViewModel @Inject constructor(private val postsUseCases: PostsUseCase
             try {
                 _postsStateFlow.value = Result.Success(postsUseCases.getPostDetailsUseCase(postId))
             }catch (e:Exception){
-                Log.d("Api","Error happened =${e.message}")
                 _postsStateFlow.value = Result.Error(e)
             }
         }
