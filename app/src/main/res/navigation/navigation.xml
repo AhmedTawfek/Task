@@ -23,7 +23,7 @@
         <action
             android:id="@+id/action_postsDetailsFragment_to_postsListFragment"
             app:destination="@id/postsListFragment"
-            app:popUpTo="@id/postsDetailsFragment"
+            app:popUpTo="@id/postsListFragment"
             app:popUpToInclusive="true"/>
     </fragment>
 </navigation>
